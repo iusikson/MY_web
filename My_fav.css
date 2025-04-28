@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Underdog&display=swap');
+﻿@import url('https://fonts.googleapis.com/css?family=Underdog&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Meow+Script&display=swap');
 * {
 	margin: 0;
@@ -9,6 +9,26 @@ ul, li{
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+footer{
+	background-color: black;
+	height: 216px;
+	/*display: flex;
+	align-items: center;*/
+	position: relative;
+	z-index: 999999;
+}
+#footer p{
+	max-height: 248px;
+	color: whitesmoke;
+	bottom: -90px;
+	padding: 10px;
+}
+#footer p a{
+	max-height: 246px;
+	color: whitesmoke;
+	bottom: -90px;
+	text-decoration: none;
 }
 .logo{
 	position: absolute;
@@ -115,6 +135,7 @@ main{
 .accordion_msg img{
 	float: right;
 	padding:20px;
+	max-height: 500px;
 }
 .accordion_msg p{
 	padding: 20px;
@@ -123,7 +144,7 @@ main{
 	font-style: bold;
 }
 .accordion ul li input:checked ~ div.accordion_msg{
-	max-height: 800px;
+	max-height: 850px;
 	opacity: 1;
 	transform: translate(0,0);
 	
@@ -184,7 +205,7 @@ main{
 	display: grid;
 	grid-template-rows:auto auto auto auto auto;
 	grid-template-columns: auto auto;
-	grid-template-areas: "header header" "london quote1" "paris quote2""turkey quote3" "venice quote4";
+	grid-template-areas: "header header" "book1 quote1" "book2 quote2""book3 quote3" "venice quote4";
 	justify-items: center;
 	align-items: center;
 	/*background-color: #7e0555;*/
@@ -227,6 +248,8 @@ main{
 .item_book2 p:hover{
 	opacity: 1;
 	transform: rotateY(0deg);
+	border-color: whitesmoke;
+	border:3px double whitesmoke;
 }
 .item_venice p{
 	background-color: rgba(207, 164, 191,0.4);
@@ -243,18 +266,18 @@ main{
 	transform: scale(1,1) rotateZ(0);
 	opacity: 1;
 }
-.item_turkey p{
+.item_book3 p{
 	background-color: rgba(207, 164, 191,0.4);
 	padding: 25px;
 	width: 375px;
     height: 550px;
-	color: #fbfdbe;
+	color: #228B22 ;
 	text-align: center;
 	opacity: 0;
 	transition: opacity 1s linear,transform 1s ease-in-out;
 	transform: scale(2,0.5) translateY(-150px) rotateY(360deg);
 }
-.item_turkey p:hover{
+.item_book3 p:hover{
 	transform: rotateY(0deg);
 	opacity: 1;
 }
@@ -270,7 +293,7 @@ main{
 	background-image: url(images/завантаження.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	grid-area: london;
+	grid-area: book1;
 	border: 2px solid;
 	border-color: black;
 }
@@ -278,18 +301,45 @@ main{
 	width: 375px;
 	height: 550px;
 	background-image: url(images/small_Танці_з_кістками_1024.png);
-	grid-area: paris;
+	grid-area: book2;
 }
 .item_quote1{
 	padding: 15px;
 	grid-area: quote1;
 	width: 575px;
+	font-size: 15px; 
 }
+.item_quote1:hover{
+	transform: rotate3d(180deg, 90deg, 18deg);
+	transition: border 1s ease-in-out, transform 1s linear, font-size 1s ease-in;
+	border: double 5pt rgb(243, 130, 0);
+	font-size: 19px;
+} 
+.item_quote2{
+	width: 575px;
+	padding: 15px;
+	grid-area: quote2;
+	font-size: 15px; 
+}
+.item_quote2:hover{
+	transform: rotate3d(180deg, 90deg, 18deg);
+	transition: border 1s ease-in-out, transform 1s linear, font-size 1s ease-in;
+	border: double 5pt rgb(243, 227, 0);
+	font-size: 19px;
+} 
 .item_quote3{
 	padding: 15px;
 	width: 575px;
 	grid-area: quote3;
+	font-size: 15px; 
 }
+.item_quote3:hover{
+	transform: rotate3d(180deg, 90deg, 18deg);
+	transition: border 1s ease-in-out, transform 1s linear, font-size 1s ease-in;
+	border: double 5pt rgba(69, 235, 19, 0.589);
+	font-size: 19px;
+}
+
 .item_quote4{
 	padding: 15px;
 	grid-area: quote4;
@@ -301,21 +351,39 @@ main{
 	background-image: url(images/venice.jpg);
 	grid-area: venice;
 }
-.item_turkey{
+.item_book3{
 	width: 375px;
 	height: 550px;
-	background-image: url(images/turkey.jpg);
-	grid-area: turkey;
+	background-image: url(images/green_mile.webp);
+	background-repeat: no-repeat;
+	background-size: cover;
+	grid-area: book3;
 }
-.item_quote2{
-	width: 575px;
-	padding: 15px;
-	grid-area: quote2;
-}
-footer{
-	background-color: black;
-	height: 248px;
-}
+
+
 .all{
 	background:linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(188,44,192,1) 25%, rgba(231,34,213,1) 48%, rgba(253,29,150,1) 77%, rgba(252,176,69,1) 100%);
+}
+h4{
+	font-size: 16pt;
+	padding: 5px;
+}
+.accordion_msg ul{
+	padding: 20px;
+}
+.gradient_text{
+	color: whitesmoke;
+	background: linear-gradient(90deg,rgba(0, 64, 255, 1) 0%, rgba(61, 164, 242, 1) 45%, rgba(40, 179, 235, 1) 56%, rgb(17, 0, 255) 78%);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.my_logo{
+	display: flex;
+	justify-items: end;
+	align-items: end;
+	color: whitesmoke;
+	position: relative;
+}
+#footer ul li p{
+	padding-left: 20pt;
 }
