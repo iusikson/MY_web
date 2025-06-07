@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css?family=Neucha|Philosopher');
+
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.container_audio{
+	background-image: url(images/spot_and_arlo.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto;
+	grid-template-areas: "head files";
+	padding: 100px;
+	grid-template-rows: 600px;
+}
+.audio_header{
+	grid-area: head;
+	font-family: 'Philosopher', sans-serif;
+	text-decoration: underline;
+	font-size: 40px;
+	color: #562e02;
+	text-shadow: -3px -3px #fee6b7, -5px -5px 4px #e7d780;
+}
+.audio_files{
+	grid-area: files;	
+}
+.audio_files ul{
+	list-style: none;
+}
+.audio_files p{
+	font-family: 'Neucha', cursive;
+	font-size: 20px;
+}
+.audio_files li{
+	padding: 10px;
+}
+
+.video1{
+	grid-area: video1;
+}
+.video2{
+	grid-area: video2;
+}
+.video_header{
+	grid-area: video_header;
+}
+.container_video{
+	background-image: url(images/spot_background.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+	grid-template-areas: "video1 video_header" "video2 .";
+	padding: 40px;
+	grid-row-gap: 15px;
+}
+.container_video{
+	color: #562e02;
+	text-shadow: -3px -3px #fee6b7, -5px -5px 4px #e7d780;
+	font-family: 'Philosopher', sans-serif;
+	text-decoration: underline;
+	font-size: 40px;
+}
+header{
+	grid-area: nav;
+	color: whitesmoke;
+}
+nav ul{
+	display: flex;
+}
+li{
+	border-bottom: whitesmoke;
+	
+}
+a{
+	color: whitesmoke;
+}
+.film_name{
+	grid-area: fname;
+	text-decoration: underline;
+	color: aquamarine;
+	text-shadow: -3px -3px #04708b, -5px -5px 4px #0d71e4, -3px -3px #0e86e9;
+}
+.film_about{
+	background-color: rgba(127, 185, 233, 0.6);
+	grid-area: about;
+}
+.arlo_about{
+	background-color: rgba(204, 202, 203, 0.6);
+	grid-area: aa;
+}
+.spot_about{
+	background-color: rgba(204, 202, 203, 0.6);
+	grid-area: sa;
+}
+.studio_logo{
+	grid-area: log;
+}
+.container_about{
+	background-image: url(images/GD_poster.png);
+	background-size: cover;
+	padding: 150px;
+	display: grid;
+	grid-template-columns: auto 300 auto;
+	grid-template-rows: auto auto auto auto auto;
+	grid-template-areas:". nav ." "fname . sa" "about . sa" "about . aa" "log . aa";
+	grid-row-gap: 15px;
+}
+
+.container_about ul{
+	list-style: none;
+}

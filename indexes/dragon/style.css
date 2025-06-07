@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css?family=Underdog&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+ul{
+	list-style: none;
+}
+
+body{
+	font-family: 'Underdog', cursive;
+}
+
+.about_characters{
+	height:770px;
+	background-image: url(images/how-to-train-your-dragon-2.jpg);
+	display: flex;
+}
+.characters_menu{
+	width: 200px;
+	position: relative;
+}
+.characters_container{
+	flex-grow: 1;
+	position: relative;
+}
+.fab{
+	position: absolute;
+	bottom: 30px;
+	left: 30px;
+	cursor: pointer;
+}
+.fab-action-button{
+	width: 70px;
+	height: 70px;
+	background-color: blueviolet;
+	border-radius: 50%;
+	box-shadow: rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px, rgba(0, 0, 0, 0.2) 0px 3px 1px -2px;
+	text-align: center;
+	padding-top: 20px;
+	font-size: 16pt;
+	text-transform: uppercase;
+	position: relative;
+}
+.fab-buttons_item{
+	margin-bottom: 10px;
+	width: 74px;
+	height: 74px;
+	border-radius: 50%;
+	border: 2px solid black;
+	position: relative;
+}
+.fab-buttons{
+	display: none;
+	margin-bottom: 50px;
+}
+.fab:hover .fab-buttons{
+	display: block;
+}
+.fab:hover .fab-buttons_item{
+	animation: label-a .5s linear;
+}
+@keyframes label-a{
+	0%{
+		transform: translateY(40px) scaleX(0) scaleY(0.5);
+	}
+	50%{
+		transform: translateY(40px) scaleX(0.5) scaleY(1);
+	}
+	100%{
+		transform: translateY(0) scaleX(1) scaleY(1);
+	}
+}
+.fab-buttons_item::before{
+	content: '';
+	display: block;
+	width: 100px;
+	height: 30px;
+	padding: 0 10px;
+	background-color: black;
+	color: whitesmoke;
+	position: absolute;
+	right: -130px;
+	top: 20px;
+	opacity: 0;
+	transform: scale(0);
+	transform-origin: left center;
+	transition: all .5s linear;
+}
+.fab-buttons_item:hover::before{
+	opacity: 1;
+	transform: scale(1);
+}
+.fab-buttons_item:hover{
+	box-shadow: 0px 0px 6px 2px black;
+}
+.fab-buttons_item:nth-of-type(1)::before{
+	content: "Іккінг";
+}
+.fab-buttons_item:nth-of-type(2)::before{
+	content: "Астрід";
+}
+.fab-buttons_item:nth-of-type(3)::before{
+	content: "Забіяка";
+}
+.fab-buttons_item:nth-of-type(4)::before{
+	content: "Вредіна";
+}
+.fab-action-button::before{
+	content: '';
+	display: block;
+	width: 76px;
+	height: 76px;
+	border-radius: 50%;
+	box-shadow: rgb(0, 169, 242) 0px 0px 0px 3px, rgb(168, 216, 237) 0px 0px 8px 2px;
+	position: absolute;
+	top: -3px;
+	left: -3px;
+	transform: scale(0);
+	opacity: 0;
+	transition: all .5s cubic-bezier(1, -1, 0, 2.08);
+}
+.fab:hover .fab-action-button::before{
+	transform: scale(1);
+	opacity: 1;
+}
+.fab:hover .fab-action-button{
+	color: whitesmoke;
+}
+.tooltip{
+	background-color: whitesmoke;
+	color: #29B6F6;
+	font-size: 16pt;
+	padding: 20px;
+	border-radius: 10px;
+	position: absolute;
+	left:30px;
+	bottom: 130px;
+	animation: jump 1s linear infinite alternate;
+}
+.tooltip::after{
+	content: '';
+	display: block;
+	width: 40 px;
+	height: 25px;
+	background-color: whitesmoke;
+	transform: skew(-60deg) skewX(15deg) rotate(100deg);
+	position: absolute;
+	left: -10px;
+	bottom: 7px;
+}
+@keyframes jump{
+	0%{
+		transform: translateY(-30px);
+	}
+	100%{
+		transform:translateY(30px)
+	}
+}
+.fab:hover .tooltip{
+	display: none;
+}
+.character{
+	width: 800px;
+	height: 500px;
+	background-color: #FFF1E8;
+	box-shadow: 3px 3px 7px black;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -400px;
+	margin-top: -250px;
+	z-index: 0;
+}
+.character img{
+	float: left;
+	border-top: #29B6F6 2px solid;
+	border-bottom: #29B6F6 2px solid;
+	padding: 25px;
+	margin: 18px;
+}
+.character p{
+	margin: 6px;
+}
+.character h2{
+	margin: 6px;
+}
+#Hiccup{
+	transform: rotate(3deg);
+}
+#Astrid{
+	transform: rotate(-2deg);
+}
+#Gruffnut{
+	transform: rotate(5deg);
+}
+#Spitelout{
+	transform: rotate(-4deg);
+}
+#Hiccup:target{
+	transform: rotate(0deg);
+	z-index: 1;
+	animation: up .5s cubic-bezier(1, -0.24, 0, 1.52);
+}
+#Astrid:target{
+	transform: rotate(0deg);
+	z-index: 1;
+	animation: up .5s cubic-bezier(1, -0.24, 0, 1.52);
+}
+#Gruffnut:target{
+	transform: rotate(0deg);
+	z-index: 1;
+	animation: up .5s cubic-bezier(1, -0.24, 0, 1.52);
+}
+#Spitelout:target{
+	transform: rotate(0deg);
+	z-index: 1;
+	animation: up .5s cubic-bezier(1, -0.24, 0, 1.52);
+}
+.about_dragons{
+	min-height: 670px;
+	background-image: url(images/19200626.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	padding: 40px;
+}
+.accordion{
+	width: 800px;
+	background-image: linear-gradient(11deg, rgba(71,102,255,0.7875525210084033) 0%, rgba(155,255,0,0.48503151260504207) 18%, rgba(131,255,57,0.5354516806722689) 31%, rgba(237,255,10,0.2329306722689075) 45%, rgba(197,38,210,0.5354516806722689) 55%, rgba(132,83,205,0.8547794117647058) 78%);
+	margin: 0 auto;
+}
+.accordion_header{
+	height: 80px;
+	padding: 10px 25px;
+	cursor: pointer;
+	background-color: #6B537C;
+	border-top: 1px solid #9775AF;
+	border-bottom: 1px solid #4F3D5B;
+	display: flex;
+	align-items: center;
+}
+.accordion_header img{
+	width: 72px;
+	height: 72px;
+	border-radius: 50%;
+	border: 2px solid #DB6E5E;
+}
+.accordion_header h2{
+	font-size: 30px;
+	color: whitesmoke;
+	padding-left: 20px;
+}
+.accordion_msg{
+	overflow: hidden;
+	max-height: 0;
+	opacity: 0;
+	transform: translate(0, 50%);
+	transition: all .5s cubic-bezier(0.04, 2.14, 1, -1.86);
+}
+.accordion_msg img{
+	float: right;
+	padding:20px;
+}
+.accordion_msg p{
+	padding: 20px;
+	color: rgba(33, 44, 58, 0.8);
+	font-size: 18px;
+}
+.accordion ul li input:checked ~ div.accordion_msg{
+	max-height: 800px;
+	opacity: 1;
+	transform: translate(0,0);
+	
+}
+.accordion ul li input{
+	position: absolute;
+	cursor: pointer;
+	width: 100%;
+	height: 80px;
+	opacity: 0;
+}
+.accordion ul li{
+	position: relative;
+}
+.accordion ul li span{
+	display: block;
+	width: 9px;
+	height: 9px;
+	position: absolute;
+	top: 30px;
+	right: 30px;
+}
+.accordion ul li span::before, .accordion ul li span::after{
+	content: '';
+	display: block;
+	width: 3px;
+	height: 9px;
+	background-color: whitesmoke;
+	transition: all .5s;
+}
+.accordion ul li span::before{
+	transform: rotate(45deg) translate(3px, 0);
+	position: absolute;
+}
+.accordion ul li span::after{ 
+	transform: rotate(-45deg) translate(-3px, 0);
+	position: absolute;
+}
+.accordion ul li input:checked ~ span::before{
+	transform: rotate(45deg) translate(-3px, 0);
+}
+.accordion ul li input:checked ~  span::after{
+	transform: rotate(-45deg) translate(3px, 0);
+}
+@keyframes up {
+	0%{
+		left: 50%;
+	}
+	50%{
+		left: 45%;
+	}
+	100%{
+		left: 50%;
+	}
+}
+.about_film{
+	height: 670px;
+	background-image: url(images/poster-kak-priruchit-drakona.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+}
+.about_film input{
+	display: none;
+}
+.about_film label{
+	display: block;
+	box-shadow: 2px 0 8px 2px black, -2px 0 5px 1px whitesmoke;
+	cursor: pointer	;
+}
+.about_film div{
+	width: 0;
+	overflow: hidden;
+	background-color: rgba(209, 238, 255, 0.8);
+	transition: width 0.5s ease-in;
+}
+#data1:checked ~ div:nth-of-type(1){
+	width: 100%;
+}
+#data2:checked ~ div:nth-of-type(2){
+	width: 100%;
+}
+#data3:checked ~ div:nth-of-type(3){
+	width: 100%;
+}
+#data4:checked ~ div:nth-of-type(4){
+	width: 100%;
+}
+#data5:checked ~ div:nth-of-type(5){
+	width: 100%;
+}
+.about_film div img{
+	padding: 30px;
+}
+.about_film div p{
+	padding: 30px;
+	font-size: 16pt;
+}
+div:nth-of-type(3) img,
+div:nth-of-type(4) img{
+	float: left;
+}
+header{
+	height: 670px;
+	background-image: url(images/618502.jpg);
+	background-size: cover;
+	position: relative;
+}
+nav{
+	position: absolute;
+	top: 15px;
+	left: 15px;
+}
+nav ul{
+	display: flex;
+}
+nav li{
+	margin: 20px 40px;
+	font-size: 16pt;
+	position: relative;
+}
+nav li a{
+	text-decoration: none;
+	color: #63C0FF;
+	display: block;
+	z-index: 2;
+	position: relative;
+	transition: color 0.3s linear;
+}
+nav li::before{
+	content: "";
+	display: block;
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 0%;
+	background-color: #63C0FF;
+	transition: height 0.3s linear;
+	z-index: 1;
+}
+nav li::after{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 0%;
+	height: 120%;
+	border-top: 2px solid #63C0FF;
+	border-bottom: 2px solid #63C0FF;
+	transition: width 0.3s linear;
+	z-index: 1;
+}
+nav li:hover::before{
+	height: 100%;;
+}
+nav li:hover::after{
+	width: 100%;
+}
+nav li:hover a{
+	color: black;
+}
+.text_back{
+	position: absolute;
+	bottom: 50px;
+	right: 100px;
+	font-size: 50pt;
+	line-height: 1;
+	color: #63C0FF;
+	background-image: url(images/poster-kak.jpg);
+	background-size: cover;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+}
+header span{
+	font-size: 90pt;
+}
+
+.text_front{
+	position: absolute;
+	bottom: 50px;
+	right: 100px;
+	font-size: 50pt;
+	line-height: 1;
+	color: #63C0FF;
+	mix-blend-mode: color;
+}
