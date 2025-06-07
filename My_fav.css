@@ -4,6 +4,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	
 }
 ul, li{
 	list-style: none;
@@ -12,7 +13,7 @@ ul, li{
 }
 footer{
 	background-color: black;
-	height: 216px;
+	height: 280px;
 	/*display: flex;
 	align-items: center;*/
 	position: relative;
@@ -362,7 +363,7 @@ main{
 
 
 .all{
-	background:linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(188,44,192,1) 25%, rgba(231,34,213,1) 48%, rgba(253,29,150,1) 77%, rgba(252,176,69,1) 100%);
+	background:grey;
 }
 h4{
 	font-size: 16pt;
@@ -380,10 +381,209 @@ h4{
 .my_logo{
 	display: flex;
 	justify-items: end;
+	justify-content: end;
 	align-items: end;
+	right: -1580px;
+	bottom: 0px;
 	color: whitesmoke;
 	position: relative;
 }
 #footer ul li p{
 	padding-left: 20pt;
 }
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(145, 145, 145);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #464646;
+    border-radius: 10px;
+    border: rgb(145, 145, 145) 3px solid;
+}
+.gall_header {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.gall_header_p {
+    color: white;
+    margin: 50px;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    border: 1px rgba(0, 0, 0, 0.50) solid;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16pt;
+    background-color: rgba(255, 255, 255, 0.20);
+    transition: background-color 0.3s ease-in-out, transform 0.4s cubic-bezier(0.42, 0, 0.5, 3), color 0.3s ease-in-out;
+}
+
+.gall_header_p:hover {
+    background-color: rgba(211, 211, 211, 0.63);
+    transform: scale(1.05);
+}
+
+.gall_header_p:active{
+    transform: rotate(300deg);
+}
+
+.gallerey {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+	background-image: url(images/bwback.svg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-size: cover;
+	background-position: 25%;
+}
+
+.gal {
+    display: flex;
+    border: 1px rgba(0, 0, 0, 0.50) solid;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    gap: 20px;
+    background-color: rgba(255, 255, 255, 0.20);
+    transition: background-color 0.3s ease-in-out, transform 0.4s cubic-bezier(0.42, 0, 0.5, 3), color 0.3s ease-in-out;
+
+
+}
+
+.gal:hover {
+    background-color: rgba(200, 200, 200, 0.5);
+    transform: scale(1.06);
+
+}
+
+.gal img {
+    width: 700px;
+    height: 450px;
+    border-radius: 10px;
+    border: 2px rgba(0, 0, 0, 0.50) solid;
+
+
+}
+
+.gal p {
+    max-width: 370px;
+    background-color: rgba(255, 255, 255, 0.10);
+    border: 1px rgba(0, 0, 0, 0.50) solid;
+    border-radius: 10px;
+    padding: 5px;
+
+    font-size: 15px;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    margin: 0;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.gal_list_chek {
+    margin: 10px 0px 0px 0px;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.5, 3);
+    
+}
+
+.gal_list_chek:hover {
+    transform: scale(1.05);
+
+}
+
+.gal_list_chek_txt1,
+.gal_list_chek_txt2,
+.gal_list_chek_txt3,
+.gal_list_chek_txt4 {
+    max-height: 0;  /* Початково прихований блок */
+    opacity: 0;
+    z-index: 1;
+    overflow: hidden; /* Запобігає появі контенту */
+    transform: translateY(-35px);
+    transition: max-height 0.4s ease-out, opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+/* Коли чекбокс активний (відкриваємо блок) */
+#gal_list_chek_leb1:checked ~ .gal_list_chek_txt1,
+#gal_list_chek_leb2:checked ~ .gal_list_chek_txt2,
+#gal_list_chek_leb3:checked ~ .gal_list_chek_txt3,
+#gal_list_chek_leb4:checked ~ .gal_list_chek_txt4 {
+    max-height: 100px; /* Підлаштуй під висоту контенту */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Коли чекбокс знімається (закриваємо блок) */
+#gal_list_chek_leb1:not(:checked) ~ .gal_list_chek_txt1,
+#gal_list_chek_leb2:not(:checked) ~ .gal_list_chek_txt2,
+#gal_list_chek_leb3:not(:checked) ~ .gal_list_chek_txt3,
+#gal_list_chek_leb4:not(:checked) ~ .gal_list_chek_txt4 {
+    max-height: 0; /* Блок ховається */
+    opacity: 0;
+    transform: translateY(-35px);
+}
+
+
+
+.txt {
+    font-size: 15px;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    margin: 0;
+    border-radius: 10px;
+    padding: 5px;
+
+
+}
+
+label {
+    cursor: pointer;
+    font-size: 15px;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    margin: 10px 0px 10px 0px;
+    padding: 5px;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.10);
+    border: 1px rgba(0, 0, 0, 0.50) solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/*Input {
+    display: none;
+}
+*/
+.skrin_a {
+    font-size: 15px;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.10);
+    border: 1px rgba(0, 0, 0, 0.20) solid;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.5, 3);
+    max-width: 195px;
+    color: white;
+
+}
+
+.skrin_a:hover {
+    transform: scale(1.05);
+}
+
