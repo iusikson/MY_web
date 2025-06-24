@@ -6,18 +6,28 @@
 	box-sizing: border-box;
 	
 }
+
 ul, li{
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
+html, body {
+  max-height: 3000px;
+}
+
+
 footer{
 	background-color: black;
-	height: 280px;
+	height: 304px;
 	/*display: flex;
 	align-items: center;*/
 	position: relative;
 	z-index: 999999;
+}
+#footer{
+	width:	1408px;
+	height:	300px;
 }
 #footer p{
 	max-height: 248px;
@@ -206,7 +216,7 @@ main{
 	display: grid;
 	grid-template-rows:auto auto auto auto auto;
 	grid-template-columns: auto auto;
-	grid-template-areas: "header header" "book1 quote1" "book2 quote2""book3 quote3" "venice quote4";
+	grid-template-areas: "header header" "book1 quote1" "book2 quote2""book3 quote3" "book4 quote4";
 	justify-items: center;
 	align-items: center;
 	/*background-color: #7e0555;*/
@@ -252,18 +262,18 @@ main{
 	border-color: whitesmoke;
 	border:3px double whitesmoke;
 }
-.item_venice p{
+.item_book4 p{
 	background-color: rgba(207, 164, 191,0.4);
 	padding: 25px;
 	width: 375px;
-	color: #fbfdbe;
+	color: #a186d8;
 	height: 550px;
 	text-align: center;
 	opacity: 0;
 	transition: opacity 1s linear,transform 1s ease-in-out;
 	transform: scale(0.8,0.8) rotateZ(-45deg);
 }
-.item_venice p:hover{
+.item_book4 p:hover{
 	transform: scale(1,1) rotateZ(0);
 	opacity: 1;
 }
@@ -346,11 +356,19 @@ main{
 	grid-area: quote4;
 	width: 575px;
 }
-.item_venice{
+.item_book4{
 	width: 375px;
 	height: 550px;
-	background-image: url(images/venice.jpg);
-	grid-area: venice;
+	background-image: url(images/biliy_popil.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	grid-area: book4;
+}
+.item_quote4:hover{
+	transform: rotate3d(180deg, 90deg, 18deg);
+	transition: border 1s ease-in-out, transform 1s linear, font-size 1s ease-in;
+	border: double 5pt rgb(43, 28, 52);
+	font-size: 19px;
 }
 .item_book3{
 	width: 375px;
@@ -383,8 +401,8 @@ h4{
 	justify-items: end;
 	justify-content: end;
 	align-items: end;
-	right: -1580px;
-	bottom: 0px;
+	right: -1530px;
+	bottom: 183px;
 	color: whitesmoke;
 	position: relative;
 }
@@ -508,7 +526,8 @@ h4{
 .gal_list_chek_txt1,
 .gal_list_chek_txt2,
 .gal_list_chek_txt3,
-.gal_list_chek_txt4 {
+.gal_list_chek_txt4,
+.gal_list_chek_txt5{
     max-height: 0;  /* Початково прихований блок */
     opacity: 0;
     z-index: 1;
@@ -521,7 +540,8 @@ h4{
 #gal_list_chek_leb1:checked ~ .gal_list_chek_txt1,
 #gal_list_chek_leb2:checked ~ .gal_list_chek_txt2,
 #gal_list_chek_leb3:checked ~ .gal_list_chek_txt3,
-#gal_list_chek_leb4:checked ~ .gal_list_chek_txt4 {
+#gal_list_chek_leb4:checked ~ .gal_list_chek_txt4,
+#gal_list_chek_leb5:checked ~ .gal_list_chek_txt5 {
     max-height: 100px; /* Підлаштуй під висоту контенту */
     opacity: 1;
     transform: translateY(0);
@@ -531,7 +551,8 @@ h4{
 #gal_list_chek_leb1:not(:checked) ~ .gal_list_chek_txt1,
 #gal_list_chek_leb2:not(:checked) ~ .gal_list_chek_txt2,
 #gal_list_chek_leb3:not(:checked) ~ .gal_list_chek_txt3,
-#gal_list_chek_leb4:not(:checked) ~ .gal_list_chek_txt4 {
+#gal_list_chek_leb4:not(:checked) ~ .gal_list_chek_txt4,
+#gal_list_chek_leb5:not(:checked) ~ .gal_list_chek_txt5 {
     max-height: 0; /* Блок ховається */
     opacity: 0;
     transform: translateY(-35px);
@@ -587,3 +608,33 @@ label {
     transform: scale(1.05);
 }
 
+.gallerey label {
+    cursor: pointer;
+    font-size: 15px;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    margin: 10px 0px 10px 0px;
+    padding: 5px;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.10);
+    border: 1px rgba(0, 0, 0, 0.50) solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.gallerey Input {
+    display: none;
+}
+
+.gallerey a{
+	color: whitesmoke;
+	text-decoration: none;
+}
+.gallerey a:visited{
+	color: rgb(221, 161, 221);
+	text-decoration: none;
+}
+
+.social{
+	text-decoration: none;
+}
